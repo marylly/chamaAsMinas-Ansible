@@ -1,4 +1,0 @@
-- hosts: server
-  user: ubuntu
-  roles:
-  - { role: install_helm, tags: ["install_helm"] }

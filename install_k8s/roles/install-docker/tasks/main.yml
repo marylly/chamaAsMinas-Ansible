@@ -1,0 +1,17 @@
+---
+# tasks file for install-docker
+- name: Instalando Docker
+  get_url:
+    url: https://get.docker.com
+    dest: /tmp/get_docker.sh
+
+- name: Modificando as permissões do arquivo de instalação
+  command: chmod 700 /tmp/get_docker.sh
+
+- name: Instalando Docker
+  shell: /tmp/get_docker.sh
+
+- name: Remove script de instalação
+  file:
+    path: /tmp/get_helm.sh
+    state: absent

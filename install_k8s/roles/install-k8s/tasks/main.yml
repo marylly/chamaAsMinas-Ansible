@@ -2,7 +2,7 @@
 # tasks file for install-k8s
 - name: Adicionando as chaves do Repositório do apt-get
   apt_key:
-    url: https://packages.cloud.google.com/apt/doc/apt-get.gpg
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
     state: present
 
 - name: Adicionando Repositório do k8s
@@ -11,7 +11,7 @@
 
 - name: Instalando kudeadm, kubelet e kubectl
   apt:
-    name: {{ packages }}
+    name: "{{ packages }}"
   vars:
     packages:
       - kubelet

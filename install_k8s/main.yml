@@ -1,8 +1,10 @@
-- hosts: all
+- hosts:
+    k8s-master
+    k8s-workers
   become: yes
   user: ubuntu
   gather_facts: no
-  pre-tasks:
+  pre_tasks:
     - name: 'Atualizando Apt Repositório'
       raw: 'apt-get update'
     - name: 'Instalando Python'
@@ -20,4 +22,5 @@
 - hosts: k8s-workers
   become: yes
   user: ubuntu
+  roles:
   - { role: join-workers, tags: ["join_workers_role"] }

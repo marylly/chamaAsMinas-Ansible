@@ -1,3 +1,4 @@
 - hosts: local
+  gather_facts: False
   roles:
   - { role: create-instances, tags: ['create_instances_role']}

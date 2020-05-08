@@ -1,6 +1,6 @@
 ---
 # vars file for create-instances
-instance_type: t2.micro
+instance_type: t2.medium
 sec_group_name: chama_as_mina
 image: ami-085925f297f89fce1
 keypair: chama_as_mina

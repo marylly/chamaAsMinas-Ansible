@@ -4,9 +4,7 @@
   get_url:
     url: https://get.docker.com
     dest: /tmp/get_docker.sh
-
-- name: Modificando as permissões do arquivo de instalação
-  command: chmod 700 /tmp/get_docker.sh
+    mode: 0700
 
 - name: Instalando Docker
   shell: /tmp/get_docker.sh

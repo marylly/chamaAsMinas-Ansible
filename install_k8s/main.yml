@@ -25,3 +25,9 @@
   user: ubuntu
   roles:
   - { role: join-workers, tags: ["join_workers_role"] }
+
+- hosts: k8s-master
+  become: yes
+  user: ubuntu
+  roles:
+  - { role: install-monit-tools, tags: ["install_monit_tools_role"] }

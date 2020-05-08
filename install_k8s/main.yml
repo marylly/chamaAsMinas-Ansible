@@ -18,6 +18,7 @@
   user: ubuntu
   roles:
   - { role: create-cluster, tags: ["create_cluster_role"] }
+  - { role: install-helm, tags: ["install_help_role"] }
 
 - hosts: k8s-workers
   become: yes

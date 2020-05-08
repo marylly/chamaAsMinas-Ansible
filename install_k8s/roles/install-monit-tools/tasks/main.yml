@@ -1,0 +1,13 @@
+---
+# tasks file for install-monit-tools
+- name: Add Prometheus Help Repo
+  shell: helm repo add stable {{ url_repo_helm }}
+  register: prometheus_add_repo
+
+- name: Helm repositories list update
+  shell: helm repo update
+  register: prrometheus_repo_update
+
+- name: Prometheus Operator Installation
+  shell: helm install {{ deploy_prometheus }}
+  register: prometheus_install
